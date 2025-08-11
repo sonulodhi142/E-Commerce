@@ -8,12 +8,13 @@ const NavBar = () => {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Link to="/" ><Navbar.Brand href="#home">Home </Navbar.Brand></Link>
+          <Navbar.Brand><Link to="/" >Home </Link></Navbar.Brand>
           <Nav className="me-auto">
-            <Link to="/"><Nav.Link href="/">Home</Nav.Link></Link>
-            <Link to="/mens"><Nav.Link href="/mens">mens</Nav.Link></Link>
-            <Link to='/womens'><Nav.Link href="/womens">womens</Nav.Link></Link>
-            <Link to="/kids"><Nav.Link href="/kids">kids</Nav.Link></Link>
+            <Nav.Link href="/">home</Nav.Link>
+            <Nav.Link href="/men">men</Nav.Link>
+            <Nav.Link href="/women">women</Nav.Link>
+            kid<Nav.Link href="/kid">kid</Nav.Link>
+            
           </Nav>
         </Container>
       </Navbar>
