@@ -8,7 +8,9 @@ const NavBar = () => {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand><Link to="/" >Home </Link></Navbar.Brand>
+          <Link to='/women'><h1 style={{color: 'white'}}>Logo</h1></Link>
+          
+          <Navbar.Brand>Home </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">home</Nav.Link>
             <Nav.Link href="/men">men</Nav.Link>
