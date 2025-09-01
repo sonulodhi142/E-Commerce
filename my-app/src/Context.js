@@ -6,6 +6,7 @@ let shopContaxt = createContext()
 const Context = () => {
   return (
     <div>Context</div>
+    
   )
 }
 
