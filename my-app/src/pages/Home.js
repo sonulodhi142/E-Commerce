@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
 const Home = () => {
+
   const [form, setForm] = useState({
+    id: '',
     name: '',
     phone: '',
     image: ''
@@ -20,7 +22,7 @@ const Home = () => {
   function handleSubmit(e) {
     e.preventDefault();
     setData(prev => [...prev, form]);
-
+    console.log(data)
     setForm({
       name: '',
       phone: '',
@@ -36,20 +38,32 @@ const Home = () => {
     document.getElementById("submit").style.display = 'none'
     let updateData = data.filter((item, index)=> (index == id))
     setForm({
+      id: id,
       name: updateData[0].name,
       phone: updateData[0].phone,
       image: ''
     });
   }
 
-  function updateHandle(id){
-    
+  function updateHandle(e){ 
+    e.preventDefault();
+    let id = document.getElementById('id').value
+    let newData = [...data]
+    newData[id] = form;
+    setData(newData)
+    setForm({
+      name: '',
+      phone: '',
+      image: ''
+    });
   }
 
   return (
     <div>
       <h1>User Form</h1>
-      <form onSubmit={handleSubmit}>
+      <form >
+        <input style={{display:'none'}}  type="text" id='id' value={form.id}
+          onChange={inputHandler}  />
         <label>Name:</label>
         <input
           type="text"
@@ -76,8 +90,8 @@ const Home = () => {
         />
         <br /><br />
         
-        <button id='submit' type="submit">Submit</button>
-        <button id='update' style={{display:'none'}} type="submit">update</button>
+        <button id='submit' type="submit" onClick={handleSubmit}>Submit</button>
+        <button id='update' style={{display:'none'}} onClick={updateHandle} type="submit">update</button>
 
       </form>
 
