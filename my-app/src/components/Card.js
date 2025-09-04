@@ -1,18 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import img from '../Assets/product_1.png'
 import './styles/Card.css'
 import { ShopContaxt } from '../ShopContaxt'
+import all_product from '../Assets/all_product'
 
 const Card = ({item}) => {
-  const {addCart} = useContext(ShopContaxt);
+  const {addToCart} = useContext(ShopContaxt);
 
+  
   return (
     <div className='Card'>
         <img src={item.image} alt='image'/>
-        <p>best way to purches the things correctly</p>
-        <h3>Rs-100</h3>
-        <h4><del>Rs-15o</del></h4>
-        <button onClick={()=> addCart(item.id)}>add</button>
+        <p>{item.name}</p>
+        <h3>{item.new_price}</h3>
+        <h4><del>{item.old_price}</del></h4>
+        <button onClick={()=> addToCart(item.id)}>add</button>
     </div>
   )
 }

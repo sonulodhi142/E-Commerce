@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Men from "./pages/Men";
 import Women from "./pages/Women";
 import Kid from "./pages/Kid";
+import Catagory from "./components/Catagory";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/men" element={<Men/>} />
+        <Route path="/men" element={<Catagory dataType='men'/>} />
         <Route path="/women" element={<Women/>} />
         <Route path="/kid" element={<Kid/>} />
       </Routes>
